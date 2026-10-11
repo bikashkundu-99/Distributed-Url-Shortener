@@ -1,0 +1,9 @@
+services:
+  url-api-1:
+    environment:
+      RATE_LIMIT_PER_MINUTE: "100000000"
+  url-api-2:
+    environment:
+      RATE_LIMIT_PER_MINUTE: "100000000"
+  redis:
+    command: ["redis-server", "--appendonly", "no", "--maxmemory", "1gb", "--maxmemory-policy", "allkeys-lru"]

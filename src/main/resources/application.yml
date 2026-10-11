@@ -1,0 +1,35 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/shortener}
+    username: ${DATABASE_USER:shortener}
+    password: ${DATABASE_PASSWORD:shortener}
+  data:
+    redis:
+      url: ${REDIS_URL:redis://localhost:6379/0}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:19092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: ${KAFKA_GROUP_ID:url-analytics-v1}
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.value.default.type: dev.relay.shortener.ApiModels$ClickEvent
+        spring.json.trusted.packages: dev.relay.shortener
+    listener:
+      ack-mode: manual_immediate
+  jackson:
+    default-property-inclusion: non_null
+relay:
+  analytics:
+    enabled: ${RELAY_ANALYTICS_ENABLED:false}
+  kafka-topic: ${KAFKA_TOPIC:url-clicks}
+  cache-ttl-seconds: ${CACHE_TTL_SECONDS:3600}
+  rate-limit-per-minute: ${RATE_LIMIT_PER_MINUTE:120}
+  geoip-db-path: ${GEOIP_DB_PATH:}
