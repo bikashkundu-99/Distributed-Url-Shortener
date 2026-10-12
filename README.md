@@ -130,3 +130,9 @@ Record the actual achieved rate, p50/p99, errors, host CPU and memory, hardware,
 ## Production follow-ups
 
 Add TLS and authentication, managed PostgreSQL and Kafka with replication, Redis HA, schema migrations, analytics retention/partitioning, dashboards and tracing, secret rotation, abuse controls, and multi-host autoscaling. The one-node Redpanda broker is for local development and has no broker redundancy.
+
+
+
+<img width="1343" height="726" alt="image" src="https://github.com/user-attachments/assets/722e3355-9565-422e-9898-0ad8c9ef0865" />
+<img width="1357" height="650" alt="image" src="https://github.com/user-attachments/assets/a2ae8640-fe2f-4e24-a3a9-22c1db77932b" />
+
