@@ -135,4 +135,5 @@ Add TLS and authentication, managed PostgreSQL and Kafka with replication, Redis
 
 <img width="1343" height="726" alt="image" src="https://github.com/user-attachments/assets/722e3355-9565-422e-9898-0ad8c9ef0865" />
 <img width="1357" height="650" alt="image" src="https://github.com/user-attachments/assets/a2ae8640-fe2f-4e24-a3a9-22c1db77932b" />
+<img width="1341" height="607" alt="image" src="https://github.com/user-attachments/assets/c940bbac-0869-4d0b-8be9-35a642bfd602" />
 
